@@ -11,6 +11,12 @@ let g:netrw_winsize = 25 " width of explorer panel
 " let g:netrw_banner = 2 " hide banner for a cleaner view
 nnoremap <leader>t :terminal<CR> " Open terminal
 
+" -- Lua (init.lua)
+vim.cmd [[
+  highlight Normal ctermbg=none guibg=none
+  highlight NonText ctermbg=none guibg=none
+]]
+
 " -------------------------------------------------------------------------
 
 " Plugins
