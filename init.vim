@@ -4,6 +4,7 @@
 
 colorscheme habamax " Change theme
 set number " Add numbers 
+set splitright " Open tabs on the right side
 let mapleader = " " " Use <Space> as leader (if not already set) 
 nnoremap <leader>e :Lexplore<CR> " Shortcut: <Space>e to toggle Lexplorer 
 let g:netrw_liststyle = 3 " tree view by default 
@@ -12,10 +13,8 @@ let g:netrw_winsize = 25 " width of explorer panel
 nnoremap <leader>t :terminal<CR> " Open terminal
 
 " -- Lua (init.lua)
-vim.cmd [[
-  highlight Normal ctermbg=none guibg=none
-  highlight NonText ctermbg=none guibg=none
-]]
+hi Normal ctermbg=none guibg=none guifg=#ffffff
+hi NonText ctermbg=none guibg=none guifg=#555555
 
 " -------------------------------------------------------------------------
 
