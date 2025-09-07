@@ -22,6 +22,7 @@ let g:netrw_winsize = 25 		" width of explorer panel
 call plug#begin()
 
 Plug 'neovim/nvim-lspconfig'       	" Core LSP support
+
 Plug 'hrsh7th/nvim-cmp'             	" Autocompletion popup
 Plug 'hrsh7th/cmp-nvim-lsp'         
 Plug 'hrsh7th/cmp-buffer'
@@ -30,6 +31,7 @@ Plug 'hrsh7th/cmp-cmdline'
 
 Plug 'mason-org/mason.nvim'		" Auto to install lsp languages
 Plug 'mason-org/mason-lspconfig.nvim'	
+
 Plug 'EdenEast/nightfox.nvim'
 
 call plug#end()
