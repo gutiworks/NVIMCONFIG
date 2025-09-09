@@ -19,6 +19,8 @@ Plug 'EdenEast/nightfox.nvim'
 
 call plug#end()
 
+colorscheme carbonfox
+
 " -------------------------------------------------------------------------
 
 " General config
