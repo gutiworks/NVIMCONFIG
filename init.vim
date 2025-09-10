@@ -1,5 +1,33 @@
 " -------------------------------------------------------------------------
 
+" General config
+
+lua << EOF
+
+-- Options :set 
+vim.opt.number = true
+vim.opt.splitright = true
+vim.opt.tabstop = 4
+vim.opt.colorcolumn = "100"
+vim.opt.path:append("**")
+
+-- Command :
+vim.cmd.colorscheme = "carbonfox"
+
+-- Global :let
+vim.g.mapleader = " "
+vim.g.netrw_liststyle = 3
+vim.g.netrw_winsize = 25
+
+-- Keymap :noremap
+vim.keymap.set( { "n", "v" }, "<leader>y", ":y+<CR>", { noremap = true, silent = true })
+vim.keymap.set( { "n", "v" }, "<leader>e", ":Lexplore<CR>", { noremap = true, silent = true })
+vim.keymap.set( { "n", "v" }, "<leader>t", ":terminal<CR>", { noremap = true, silent = true })
+vim.keymap.set( "n", "<leader>d", ":lua vim.lsp.buf.definition<CR>", { noremap = true, silent = true })
+EOF
+
+" -------------------------------------------------------------------------
+
 " Plugins
 
 call plug#begin()
@@ -20,33 +48,6 @@ Plug 'EdenEast/nightfox.nvim'
 call plug#end()
 
 colorscheme carbonfox
-
-" -------------------------------------------------------------------------
-
-" General config
-
-lua << EOF
-
--- Options :set 
-vim.opt.number = true
-vim.opt.splitright = true
-vim.opt.tabstop = 4
-vim.opt.colorcolumn = "100"
-
--- Command :
-vim.cmd.colorscheme = "carbonfox"
-
--- Global :let
-vim.g.mapleader = " "
-vim.g.netrw_liststyle = 3
-vim.g.netrw_winsize = 25
-
--- Keymap :noremap
-vim.keymap.set( { "n", "v" }, "<leader>y", ":y+<CR>", { noremap = true, silent = true })
-vim.keymap.set( { "n", "v" }, "<leader>e", ":Lexplore<CR>", { noremap = true, silent = true })
-vim.keymap.set( { "n", "v" }, "<leader>t", ":terminal<CR>", { noremap = true, silent = true })
-
-EOF
 
 " -------------------------------------------------------------------------
 
