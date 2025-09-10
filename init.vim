@@ -24,6 +24,7 @@ lua << EOF
 vim.opt.number = true
 vim.opt.splitright = true
 vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.colorcolumn = "100"
 vim.opt.path:append("**")
 
