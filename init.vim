@@ -1,19 +1,3 @@
-let g:startify_custom_header = [
-            \ ' ____                         _   ',
-            \ '|  _ \  __ ___   ___ __   ___| |_ ',
-            \ '| | | |/ _` \ \ / / ''_ \ / _ \ __|',
-            \ '| |_| | (_| |\ V /| | | |  __/ |_ ',
-            \ '|____/ \__,_| \_/ |_| |_|\___|\__|',
-            \ ]
-
-let g:startify_custom_footer = [
-            \ '',
-            \ 'Welcome — you are plugged into DAVNET',
-            \ 'ようこそ — ダブネットに接続しています',
-            \ ]
-
-let g:startify_enable_special = 0  
-let g:startify_files_number = 0
 " -------------------------------------------------------------------------
 
 " General config
@@ -29,19 +13,34 @@ vim.opt.colorcolumn = "100"
 vim.opt.path:append("**")
 
 -- Command :
-vim.cmd.colorscheme = "carbonfox"
+-- vim.cmd.colorscheme = "default"
 
 -- Global :let
 vim.g.mapleader = " "
 vim.g.netrw_liststyle = 3
 vim.g.netrw_winsize = 25
+vim.g.startify_custom_header = {
+  [[ ____                         _   ]],
+  [[|  _ \  __ ___   ___ __   ___| |_ ]],
+  [[| | | |/ _` \ \ / / '_ \ / _ \ __|]],
+  [[| |_| | (_| |\ V /| | | |  __/ |_ ]],
+  [[|____/ \__,_| \_/ |_| |_|\___|\__|]],
+}
+vim.g.startify_custom_footer = {
+  "",
+  "Welcome — you are plugged into DAVNET",
+  "ようこそ — ダブネットに接続しています",
+}
+vim.g.startify_enable_special = 0  
+vim.g.startify_files_number = 0
 
 -- Keymap :noremap
-vim.keymap.set( { "n", "v" }, "<leader>y", ":y+<CR>", { noremap = true, silent = true })
-vim.keymap.set( { "n", "v" }, "<leader>e", ":Lexplore<CR>", { noremap = true, silent = true })
 vim.keymap.set( { "n", "v" }, "<leader>t", ":terminal<CR>", { noremap = true, silent = true })
+vim.keymap.set( { "n", "v" }, "<leader>e", ":Lexplore<CR>", { noremap = true, silent = true })
+vim.keymap.set( { "n", "v" }, "<leader>y", ":y+<CR>", { noremap = true, silent = true })
 vim.keymap.set( "n", "<leader>d", ":lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 vim.keymap.set( "n", "<leader>de", ":lua vim.diagnostic.setqflist()<CR>", { noremap = true, silent = true })
+
 EOF
 
 " -------------------------------------------------------------------------
@@ -72,7 +71,6 @@ colorscheme carbonfox
 
 " Plugin config 
 
-" Mason
 lua << EOF
 
 -- Mason
@@ -106,4 +104,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require('lspconfig')['kotlin_language_server'].setup {
 		capabilities = capabilities
 }
+
 EOF
+
+" -------------------------------------------------------------------------
