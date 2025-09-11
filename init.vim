@@ -5,20 +5,20 @@
 lua << EOF
 
 -- Options :set 
-vim.opt.number = true
-vim.opt.splitright = true
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.colorcolumn = "100"
-vim.opt.path:append("**")
+-- vim.opt.number = true
+-- vim.opt.splitright = true
+-- vim.opt.tabstop = 4
+-- vim.opt.shiftwidth = 4
+-- vim.opt.colorcolumn = "100"
+-- vim.opt.path:append("**")
 
 -- Command :
 -- vim.cmd.colorscheme = "default"
 
 -- Global :let
-vim.g.mapleader = " "
-vim.g.netrw_liststyle = 3
-vim.g.netrw_winsize = 25
+-- vim.g.mapleader = " "
+-- vim.g.netrw_liststyle = 3
+-- vim.g.netrw_winsize = 25
 vim.g.startify_custom_header = {
   [[ ____                         _   ]],
   [[|  _ \  __ ___   ___ __   ___| |_ ]],
@@ -35,11 +35,11 @@ vim.g.startify_enable_special = 0
 vim.g.startify_files_number = 0
 
 -- Keymap :noremap
-vim.keymap.set( { "n", "v" }, "<leader>t", ":terminal<CR>", { noremap = true, silent = true })
-vim.keymap.set( { "n", "v" }, "<leader>e", ":Lexplore<CR>", { noremap = true, silent = true })
-vim.keymap.set( { "n", "v" }, "<leader>y", ":y+<CR>", { noremap = true, silent = true })
-vim.keymap.set( "n", "<leader>d", ":lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
-vim.keymap.set( "n", "<leader>de", ":lua vim.diagnostic.setqflist()<CR>", { noremap = true, silent = true })
+-- vim.keymap.set( { "n", "v" }, "<leader>t", ":terminal<CR>", { noremap = true, silent = true })
+-- vim.keymap.set( { "n", "v" }, "<leader>e", ":Lexplore<CR>", { noremap = true, silent = true })
+-- vim.keymap.set( { "n", "v" }, "<leader>y", ":y+<CR>", { noremap = true, silent = true })
+-- vim.keymap.set( "n", "<leader>d", ":lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
+-- vim.keymap.set( "n", "<leader>de", ":lua vim.diagnostic.setqflist()<CR>", { noremap = true, silent = true })
 
 EOF
 
