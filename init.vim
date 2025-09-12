@@ -106,6 +106,14 @@ require('lspconfig')['kotlin_language_server'].setup {
 		capabilities = capabilities
 }
 
+-- Diagnostic configuration
+vim.diagnostic.config({
+	virtual_text = true,
+	sign = true,
+	underline = true,
+	float = { border = "rounded" },
+})
+
 EOF
 
 " -------------------------------------------------------------------------
