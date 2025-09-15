@@ -41,6 +41,7 @@ vim.g.startify_files_number = 0
 -- vim.keymap.set( "n", "<leader>d", ":lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 -- vim.keymap.set( "n", "<leader>h", ":lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
 -- vim.keymap.set( "n", "<leader>de", ":lua vim.diagnostic.setqflist()<CR>", { noremap = true, silent = true })
+-- vim.keymap.set( "n", "<leader>ds", ":lua vim.diagnostic.show()<CR>", { noremap = true, silent = true })
 
 EOF
 
