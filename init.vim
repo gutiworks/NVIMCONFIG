@@ -11,6 +11,7 @@ lua << EOF
 -- vim.opt.shiftwidth = 4
 -- vim.opt.colorcolumn = "100"
 -- vim.opt.path:append("**")
+-- vim.opt.foldmethod = syntax
 
 -- Command :
 -- vim.cmd.colorscheme = "default"
