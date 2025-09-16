@@ -36,16 +36,16 @@ EOF
 
 call plug#begin()
 
-Plug 'neovim/nvim-lspconfig'       		" Core LSP support
+Plug 'neovim/nvim-lspconfig'       		
 
-Plug 'hrsh7th/nvim-cmp'             	" Autocompletion popup
+Plug 'mason-org/mason.nvim'				
+Plug 'mason-org/mason-lspconfig.nvim'	
+
+Plug 'hrsh7th/nvim-cmp'             	
 Plug 'hrsh7th/cmp-nvim-lsp'         
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
-
-Plug 'mason-org/mason.nvim'				" Auto to install lsp languages
-Plug 'mason-org/mason-lspconfig.nvim'	
 
 Plug 'EdenEast/nightfox.nvim'
 
@@ -58,6 +58,14 @@ colorscheme carbonfox
 " Plugin config 
 
 lua << EOF
+
+-- Diagnostic configuration
+vim.diagnostic.config({
+	virtual_text = true,
+	sign = true,
+	underline = true,
+	float = { border = "rounded" },
+})
 
 -- Mason
 require("mason").setup()
@@ -90,14 +98,6 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require('lspconfig')['kotlin_language_server'].setup {
 		capabilities = capabilities
 }
-
--- Diagnostic configuration
-vim.diagnostic.config({
-	virtual_text = true,
-	sign = true,
-	underline = true,
-	float = { border = "rounded" },
-})
 
 EOF
 
