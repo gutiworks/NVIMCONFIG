@@ -27,6 +27,7 @@ vim.keymap.set( { "n", "v" }, "<leader>y", ":y+<CR>", { noremap = true, silent =
 vim.keymap.set( "n", "<leader>d", ":lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 vim.keymap.set( "n", "<leader>h", ":lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
 vim.keymap.set( "n", "<leader>de", ":lua vim.diagnostic.setqflist()<CR>", { noremap = true, silent = true })
+vim.keymap.set( "n", "<leader>b", ":bn<CR>", { noremap = true, silent = true } )
 
 EOF
 
@@ -44,8 +45,6 @@ Plug 'mason-org/mason-lspconfig.nvim'
 Plug 'hrsh7th/nvim-cmp'             	
 Plug 'hrsh7th/cmp-nvim-lsp'         
 Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
 
 Plug 'EdenEast/nightfox.nvim'
 
@@ -62,7 +61,7 @@ lua << EOF
 -- Diagnostic configuration
 vim.diagnostic.config({
 	virtual_text = true,
-	sign = true,
+	signs = true,
 	underline = true,
 	float = { border = "rounded" },
 })
@@ -75,10 +74,6 @@ require("mason-lspconfig").setup()
 local cmp = require'cmp'
 
 cmp.setup({
-	window = {
-	  -- completion = cmp.config.window.bordered(),
-	  -- documentation = cmp.config.window.bordered(),
-	},
 	mapping = cmp.mapping.preset.insert({
 	  ['<C-b>'] = cmp.mapping.scroll_docs(-4),
 	  ['<C-f>'] = cmp.mapping.scroll_docs(4),
