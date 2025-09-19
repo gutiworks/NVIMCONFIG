@@ -90,8 +90,11 @@ cmp.setup({
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-require('lspconfig')['kotlin_language_server'].setup {
+vim.lsp.config["kotlin_language_server"] = {
 		capabilities = capabilities
+}
+vim.lsp.config["jdtls"] = {
+	capabilities = capabilities
 }
 
 EOF
