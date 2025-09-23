@@ -1,30 +1,74 @@
-# Installation
+# Movements
 
-```
-1 -> Install the release from nvim
-2 -> Add a quick path for nvim command
-3 -> Create init.vim file on config for the configurations
+---
 
-4 -> Download plug.vim raw file
-5 -> Add it to autoload/plug.vim
+### 🔹 Basic Movement (per character/line)
 
-6 -> Add LSP languages -> Plug 'neovim/nvim-lspconfig' 
+* `h` → left
+* `l` → right
+* `0` → beginning of line
+* `^` → first non-whitespace character
+* `$` → end of line
 
-7 -> Add autocompletition pop up ->
-            Plug 'hrsh7th/nvim-cmp'
-            Plug 'hrsh7th/cmp-nvim-lsp'         
-            Plug 'hrsh7th/cmp-buffer'
-            Plug 'hrsh7th/cmp-path'
-            Plug 'hrsh7th/cmp-cmdline'
+---
 
-8 -> Add Mason to install LSP languages ->
-          Plug 'mason-org/mason.nvim'
-          Plug 'mason-org/mason-lspconfig.nvim'	
+### 🔹 Word-Level Movement
 
-9 -> :PlugInstall to install all plugins
+* `w` → beginning of next word
+* `e` → end of current/next word
+* `b` → beginning of current/previous word
+* `ge` → end of previous word
 
-10 -> Configure Mason on init.vim
-11 -> :Mason to install LSP languages
+---
 
-12 -> Configure CMP on init.vim to access LSP imports ...
-```
+### 🔹 Paragraph & Sentence
+
+* `{` → beginning of paragraph
+* `}` → end of paragraph
+* `( )` → move by sentence
+
+---
+
+### 🔹 Screen Movement
+
+* `Ctrl-d` → half-page down
+* `Ctrl-u` → half-page up
+* `Ctrl-f` → full page forward
+* `Ctrl-b` → full page back
+* `zz` → center current line on screen
+* `zt` → put current line at top
+* `zb` → put current line at bottom
+
+---
+
+### 🔹 Searching / Jumping
+
+* `/pattern` → search forward
+* `?pattern` → search backward
+* `n` / `N` → repeat search forward/back
+* `f<char>` → jump to next occurrence of a char on the same line
+* `t<char>` → jump **until** before that char
+* `;` / `,` → repeat last `f` or `t` forward/backward
+
+---
+
+### 🔹 Marks & Jumps
+
+* `''` → jump back to last cursor position in current file
+* `ma` → set mark `a` at current position
+* `'a` → jump to beginning of line with mark `a`
+* \`\`a`→ jump to exact column with mark`a\`
+
+---
+
+### 🔹 File Navigation
+
+* `gg` → go to beginning of file
+* `G` → go to end of file
+* `:10` → jump to line 10
+* `10G` → same thing
+* `H` → top of screen
+* `M` → middle of screen
+* `L` → bottom of screen
+
+---
