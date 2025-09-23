@@ -1,5 +1,7 @@
 # Movements
 
+⚡ If you master just f/t + ; , + /search + gg/G/zz, you’ll barely touch arrows or hjkl for navigation again.
+
 ---
 
 ### 🔹 Basic Movement (per character/line)
