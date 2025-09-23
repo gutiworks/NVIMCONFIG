@@ -21,13 +21,14 @@ vim.g.netrw_liststyle = 3
 vim.g.netrw_winsize = 25
 
 -- Keymap :noremap
-vim.keymap.set( { "n", "v" }, "<leader>t", ":terminal<CR>", { noremap = true, silent = true })
 vim.keymap.set( { "n", "v" }, "<leader>e", ":Lexplore<CR>", { noremap = true, silent = true })
 vim.keymap.set( { "n", "v" }, "<leader>y", ":y+<CR>", { noremap = true, silent = true })
-vim.keymap.set( "n", "<leader>d", ":lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
-vim.keymap.set( "n", "<leader>h", ":lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
-vim.keymap.set( "n", "<leader>de", ":lua vim.diagnostic.setqflist()<CR>", { noremap = true, silent = true })
 vim.keymap.set( "n", "<leader>b", ":bn<CR>", { noremap = true, silent = true } )
+-- vim.keymap.set( { "n", "v" }, "<leader>t", ":terminal<CR>", { noremap = true, silent = true })
+-- vim.keymap.set( "n", "<leader>d", ":lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
+-- vim.keymap.set( "n", "<leader>h", ":lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
+-- vim.keymap.set( "n", "<leader>de", ":lua vim.diagnostic.setqflist()<CR>", { noremap = true, silent = true })
+-- vim.keymap.set( "n", "<leader>r", ":!javac --release 8 % && java Main<CR>", { noremap = true, silent = true})
 
 EOF
 
@@ -93,9 +94,8 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 vim.lsp.config["kotlin_language_server"] = {
 		capabilities = capabilities
 }
-vim.lsp.config["jdtls"] = {
-	capabilities = capabilities
-}
+
+vim.lsp.enable("jdtls")
 
 EOF
 
