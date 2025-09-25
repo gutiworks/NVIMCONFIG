@@ -10,7 +10,6 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true 
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.path:append("**")
 
 -- Command :
 -- vim.cmd.colorscheme = "default"
@@ -24,6 +23,7 @@ vim.g.netrw_winsize = 25
 vim.keymap.set( { "n", "v" }, "<leader>e", ":Lexplore<CR>", { noremap = true, silent = true })
 vim.keymap.set( { "n", "v" }, "<leader>y", ":y+<CR>", { noremap = true, silent = true })
 vim.keymap.set( "n", "<leader>b", ":bn<CR>", { noremap = true, silent = true } )
+vim.keymap.set( "t", "<Esc>", "<C-\\><C-n>" )
 -- vim.keymap.set( { "n", "v" }, "<leader>t", ":terminal<CR>", { noremap = true, silent = true })
 -- vim.keymap.set( "n", "<leader>d", ":lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 -- vim.keymap.set( "n", "<leader>h", ":lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
