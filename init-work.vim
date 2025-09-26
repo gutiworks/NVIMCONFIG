@@ -40,9 +40,6 @@ call plug#begin()
 
 Plug 'neovim/nvim-lspconfig'       		
 
-Plug 'mason-org/mason.nvim'				
-Plug 'mason-org/mason-lspconfig.nvim'	
-
 Plug 'hrsh7th/nvim-cmp'             	
 Plug 'hrsh7th/cmp-nvim-lsp'         
 Plug 'hrsh7th/cmp-buffer'
@@ -52,9 +49,6 @@ Plug 'EdenEast/nightfox.nvim'
 call plug#end()
 
 colorscheme carbonfox
-
-" -------------------------------------------------------------------------
-
 " Plugin config 
 
 lua << EOF
@@ -67,10 +61,6 @@ vim.diagnostic.config({
 	float = { border = "rounded" },
 })
 
--- Mason
-require("mason").setup()
-require("mason-lspconfig").setup()
-
 -- Cmp
 local cmp = require'cmp'
 
@@ -82,6 +72,9 @@ cmp.setup({
 	  ['<C-e>'] = cmp.mapping.abort(),
 	  ['<CR>'] = cmp.mapping.confirm({ select = true }),   
 	}),
+	window = {
+     -- documentation = cmp.config.window.bordered(), 
+  	},
 	sources = cmp.config.sources({
 	  { name = 'nvim_lsp' },
 	  { name = 'buffer' },
@@ -89,12 +82,9 @@ cmp.setup({
 })
 
 -- Set up lspconfig.
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+-- local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-vim.lsp.config["kotlin_language_server"] = {
-		capabilities = capabilities
-}
-
+vim.lsp.enable("kotlin_language_server")
 vim.lsp.enable("jdtls")
 
 EOF
